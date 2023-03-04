@@ -19,3 +19,28 @@ def ryerson_letter_grade(n):
     else:
         adjust = ""
     return "DCB"[tens - 5] + adjust
+
+def is_ascending(items):
+    for i in range(len(items)-1):
+        if items[i] >= items[i+1]: return False
+    return True
+
+def riffle(items, out=True):
+    halve1 = []
+    for i in range(len(items)//2):
+        halve1.append(items[i])
+    halve2 = []
+    for i in range(len(items)//2, len(items)):
+        halve2.append(items[i])
+    shuffled_items = []
+    j = 0
+    k = 0
+    for i in range(len(items)):
+        if (((i % 2 == 0) & (out == True)) | ((i % 2 == 1) & (out == False))):
+                shuffled_items.append(halve1[j])
+                j = j + 1
+        else:
+                shuffled_items.append(halve2[k])
+                k = k + 1
+    return shuffled_items
+    
