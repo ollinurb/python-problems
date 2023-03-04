@@ -27,9 +27,9 @@ def is_ascending(items):
 
 def riffle(items, out=True):
     halve1 = []
+    halve2 = []
     for i in range(len(items)//2):
         halve1.append(items[i])
-    halve2 = []
     for i in range(len(items)//2, len(items)):
         halve2.append(items[i])
     shuffled_items = []
@@ -44,3 +44,14 @@ def riffle(items, out=True):
                 k = k + 1
     return shuffled_items
     
+def only_odd_digits(n):
+    num = n
+    while(num > 10):
+        if((num % 10) % 2 == 0):
+            return False
+        else:
+            num = num//10
+    return num % 2 == 1
+
+def is_cyclops(n):
+    return True
