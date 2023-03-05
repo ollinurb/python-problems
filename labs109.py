@@ -84,3 +84,18 @@ def domino_cycle(tiles):
         return False
     return True
 
+def colour_trio(colours):
+    processed_list = colours
+    while(len(processed_list) > 1):
+        temp_list = []
+        for i in range(len(processed_list) - 1):
+            if(processed_list[i] == processed_list[i+1]):
+                temp_list.append(processed_list[i])
+            elif((processed_list[i] != "b") & (processed_list[i+1] != "b")):
+                temp_list.append("b")
+            elif((processed_list[i] != "y") & (processed_list[i+1] != "y")):
+                temp_list.append("y")
+            else:
+                temp_list.append("r")
+        processed_list = temp_list
+    return processed_list[0]
