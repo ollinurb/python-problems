@@ -54,4 +54,24 @@ def only_odd_digits(n):
     return num % 2 == 1
 
 def is_cyclops(n):
+    if(n == 0):
+        return True
+    num = n
+    num_lenght = 0
+    while(num > 0):
+        num = num//10
+        num_lenght = num_lenght + 1
+    if(num_lenght % 2 == 0):
+        return False
+    num = n
+    for i in range(num_lenght):
+        if(i == num_lenght//2):
+            if(num % 10 != 0):
+                return False
+            else:
+                num = num//10
+        else:
+            if(num % 10 == 0):
+                return False
+            num = num//10
     return True
