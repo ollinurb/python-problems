@@ -75,3 +75,12 @@ def is_cyclops(n):
                 return False
             num = num//10
     return True
+
+def domino_cycle(tiles):
+    for i in range(len(tiles) - 1):
+        if(tiles[i][1] != tiles[i+1][0]):
+            return False
+    if(tiles[0][0] != tiles[len(tiles)-1][1]):
+        return False
+    return True
+
