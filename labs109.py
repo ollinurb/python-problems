@@ -99,3 +99,14 @@ def colour_trio(colours):
                 temp_list.append("r")
         processed_list = temp_list
     return processed_list[0]
+
+def count_dominators(items):
+    if(len(items) == 0):
+        return 0
+    dominators = 1
+    max = items[len(items)-1]
+    for i in range(len(items)-1, 0, -1):
+        if(items[i-1] > max):
+            dominators = dominators + 1
+            max = items[i-1]
+    return dominators
